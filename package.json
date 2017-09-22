@@ -1,0 +1,17 @@
+{
+  "name": "scrap-news",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "request": "^2.82.0"
+  }
+}
