@@ -17,8 +17,8 @@ app.get('/scrape', function (req, res){
 		if(!error){
 			const $ = cheerio.load(html)
 
-			let title, notice, description
-			const json = {title :"", notice : "", description : ""}
+			let title, href, imgSrc
+			const json = {title :"", href : "", imgSrc : ""}
 
 			$('.story-header-title-link').filter(function(){
 
@@ -27,12 +27,29 @@ app.get('/scrape', function (req, res){
 
 				title = data.text()
 				// const href = `${data}`.split(/[href=(["'])(.*?)\1]/g)
-				const href = `${data}`.match(/http:[^"]+/g)
+				href = `${data}`.match(/http:[^"]+/g)
 
-				console.log(title, href)
+				json.title = title
+				json.href = href
+
+				// console.log(title, href)
 
 
 			})
+
+			$('figure').filter(function(){
+
+				const data = $(this)
+				// console.log(`DATA OF THE HTML (img) ${data}`)
+
+				imgSrc = `${data}`.match(/data-src-md=(["'])(.*?)\1/g)
+				// console.log(`IMG SRC ====> ${imgSrc}`)
+				json.imgSrc = imgSrc
+
+			})
+
+			// console.log(json)
+
 		}
 
 

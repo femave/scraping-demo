@@ -1,0 +1,17 @@
+{
+  "name": "scrap-news",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Marc Vergara <marc.vergara.f@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/femave/scraping-demo",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
