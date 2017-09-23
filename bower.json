@@ -1,17 +1,23 @@
 {
   "name": "scrap-news",
-  "description": "",
+  "description": "Scraping webs",
   "main": "index.js",
   "authors": [
     "Marc Vergara <marc.vergara.f@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/femave/scraping-demo",
+  "homepage": "/client",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "font-awesome": "^4.7.0"
+  }
 }

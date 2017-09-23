@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/app.js",
-    "dev": "nodemon server/app.js"
+    "dev": "nodemon server/app.js",
+    "build:scss": "node-sass src/scss/styles.scss client/css/styles.css",
+    "build:scss:watch": "node-sass src/scss/styles.scss client/css/styles.css --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.15.4",
+    "node-sass": "^4.5.3",
     "request": "^2.82.0"
   }
 }

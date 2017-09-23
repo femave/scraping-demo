@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+<head>
+  <meta charset="UTF-8">
+  <title>News</title>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div>
+    <nav class="bg-nav">
+      <ul>
+        <li><button>Home</button></li>
+      </ul>
+    </nav>
+  </div>
+
+  <ng-view autoscroll="true"></ng-view>
+
+  <!-- jquery, angular, bootstrap -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/angular-route/angular-route.min.js"></script>
+
+
+
+  <!-- app js -->
+  <script src="app/app.js"></script>
+
+  <!-- services js -->
+  <script src="app/services/localService.js"></script>
+  <script src="app/services/dataServices.js"></script>
+
+  <!-- home -->
+  <script src="app/routes/home/controller.js"></script>
+  <script src="app/routes/home/index.js"></script>
+
+  <!-- newsPage -->
+  <script src="app/routes/newsPage/controller.js"></script>
+  <script src="app/routes/newsPage/index.js"></script>
+
+
+</body>
+</html>
