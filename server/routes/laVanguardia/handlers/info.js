@@ -57,7 +57,7 @@ const cheerio = require('cheerio');
 				const imgFirst = `${dataTitle}`.match(/data-src-md=(["'])(.*?)\1/g)
 
 				title.push(dataTitle.find('h1').text())
-				href.push(`${dataTitle}`.match(/http:[^"]+/g))
+				href.push(`${dataTitle}`.match(/[^"]+html/g))
 				if(imgFirst !== null){
 					const imgUrl = imgFirst.join().match(/[^"]+/g)
 					imgSrc.push(imgUrl[1])
