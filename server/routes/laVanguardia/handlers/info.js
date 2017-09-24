@@ -9,78 +9,74 @@ const cheerio = require('cheerio');
 	function webScraped (callback){ 
 		request(url, function(error, response, body){
 
-			// let title, href, imgSrc
-			// const infoWeb = {title :"", href : "", imgSrc : ""}
-
-			// if(!error){
-			// 	const $ = cheerio.load(body)
-
-			// 	$('.story-header-title-link').filter(function(){
-
-			// 		const data = $(this)
-
-			// 		title = data.text()
-			// 		href = `${data}`.match(/http:[^"]+/g)
-
-					// console.log(title, href)
-
-				// })
-
-			// 	$('figure').filter(function(){
-
-			// 		const data = $(this)
-
-			// 		imgSrc = `${data}`.match(/data-src-md=(["'])(.*?)\1/g)
-
-			// 		info.imgSrc = imgSrc
-
-			// 	})		
-
-			// }
-
-
-			result = JSON.stringify(body);
 			return callback(false, body);	
-
 
 		})
 	}
 
 	function info (req, res){
-		// console.log(data)
+
 		webScraped(function (err, data) {
-			// console.log('1')
+
 			if(err) return res.send(err);
 
 			const $ = cheerio.load(data)
-			// console.log('2')
+
+			let newsData =[]
 			let title = []
 			let href = []
 			let imgSrc = []
 
 			$('.story-header-title-link').filter(function(){
 
-				const dataTitle = $(this)
+				const dataTitle = $(this)				
 
 				title.push( dataTitle.text())
-				href.push(`${dataTitle}`.match(/http:[^"]+/g))
+				href.push(`${dataTitle}`.match(/http:[^"]+/g))		
 
 			})
 
-			$('.story-figure').filter(function(){
+
+			$('figure').not('.linkable').filter(function(){
 
 				const dataImg = $(this)
-
-				imgSrc.push(`${dataImg}`.match(/data-src-md=(["'])(.*?)\1/g))
-
-				// console.log('2.8')
+				const imgFirst = `${dataImg}`.match(/data-src-md=(["'])(.*?)\1/g)
+				if(imgFirst !== null){
+					const imgUrl = imgFirst.join().match(/[^"]+/g)
+					imgSrc.push(imgUrl[1])
+				}else {
+					imgSrc.push(imgFirst)
+				}
 
 			})
 
+			$('.story').filter(function(){
+
+				const dataTitle = $(this)				
+				// console.log(dataTitle)
+
+				title =  dataTitle.text()
+				console.log(title)
+				// href.push(`${dataTitle}`.match(/http:[^"]+/g))		
+
+			})
+
+
+			const getObjectData = function(dataT, dataHref, dataImg){
+
+				for ( var i = 0; i < dataT.length; i++){
+					objx = {}
+					objx.title = dataT[i]					
+					objx.href = dataHref[i]
+					objx.imgSrc = dataImg[i]
+					newsData.push(objx)
+				}
+			}
+
+			getObjectData(title, href, imgSrc)
+
 			res.send({
-				'title': title,
-				'href' : href,
-				'imgSrc': imgSrc
+				newsData
 			})
 
 			

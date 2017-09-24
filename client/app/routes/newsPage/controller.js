@@ -4,7 +4,10 @@ angular.module('mainApp')
 	
 	const newsPage = $routeParams
 
-	console.log(dataServices.getInfo())
-
+	dataServices.getInfo()
+	.then(notices =>{
+		$scope.data = notices.data
+		console.log($scope.data)
+	})
 
 })
