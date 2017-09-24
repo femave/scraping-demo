@@ -27,37 +27,44 @@ const cheerio = require('cheerio');
 			let href = []
 			let imgSrc = []
 
-			$('.story-header-title-link').filter(function(){
+			// $('.story-header-title-link').filter(function(){
+
+			// 	const dataTitle = $(this)				
+
+			// 	title.push( dataTitle.text())
+			// 	href.push(`${dataTitle}`.match(/http:[^"]+/g))		
+
+			// })
+
+
+			// $('figure').not('.linkable').filter(function(){
+
+			// 	const dataImg = $(this)
+			// 	const imgFirst = `${dataImg}`.match(/data-src-md=(["'])(.*?)\1/g)
+			// 	if(imgFirst !== null){
+			// 		const imgUrl = imgFirst.join().match(/[^"]+/g)
+			// 		imgSrc.push(imgUrl[1])
+			// 	}else {
+			// 		imgSrc.push(imgFirst)
+			// 	}
+
+			// })
+
+			$('.story').filter(function(){
 
 				const dataTitle = $(this)				
 
-				title.push( dataTitle.text())
-				href.push(`${dataTitle}`.match(/http:[^"]+/g))		
+				const imgFirst = `${dataTitle}`.match(/data-src-md=(["'])(.*?)\1/g)
 
-			})
-
-
-			$('figure').not('.linkable').filter(function(){
-
-				const dataImg = $(this)
-				const imgFirst = `${dataImg}`.match(/data-src-md=(["'])(.*?)\1/g)
+				title.push(dataTitle.find('h1').text())
+				href.push(`${dataTitle}`.match(/http:[^"]+/g))
 				if(imgFirst !== null){
 					const imgUrl = imgFirst.join().match(/[^"]+/g)
 					imgSrc.push(imgUrl[1])
 				}else {
 					imgSrc.push(imgFirst)
 				}
-
-			})
-
-			$('.story').filter(function(){
-
-				const dataTitle = $(this)				
-				// console.log(dataTitle)
-
-				title =  dataTitle.text()
-				console.log(title)
-				// href.push(`${dataTitle}`.match(/http:[^"]+/g))		
+						
 
 			})
 
