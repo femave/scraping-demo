@@ -1,7 +1,45 @@
 
-
-
 .bg-nav{
 	height: 30px;
 	background-color: #4A4A46;
+}
+
+.bg-home{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	.bg-news{
+		text-align: center;
+		width: 180px;
+		height: 280px;
+		box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
+		margin: 20px;
+		list-style-type: none;
+		img{
+			min-width: 180px;
+			max-width: 180px;
+			min-height: 280px;
+			max-height: 280px;
+		}
+	}
+}
+
+.bg-newsPage{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	.bg-news{
+		text-align: center;
+		width: 380px;
+		height: 520px;
+		box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
+		margin: 20px;
+		list-style-type: none;
+		img{
+			min-width: 280px;
+			max-width: 280px;
+			min-height: 380px;
+			max-height: 380px;
+		}
+	}
 }

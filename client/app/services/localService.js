@@ -7,22 +7,26 @@ angular.module('mainApp')
 		{
 			'id': 0,
 			'name': 'La Vanguardia',
-			'link': 'lavanguardia'
+			'link': 'lavanguardia',
+			'src' : 'http://img.kiosko.net/2017/03/03/es/lavanguardia.750.jpg'
 		},
 		{
 			'id': 1,
 			'name': 'El Pais',
-			'link': 'elpais'
+			'link': 'elpais',
+			'src' : 'http://a2012.kiosko.net/11/07/es/elpais.750.jpg'
 		},
 		{
 			'id': 2,
 			'name': 'Omicrono',
-			'link': 'omicrono'
+			'link': 'omicrono',
+			'src' : 'https://www.foxinthenet.com/public/uploads/portfolios/omicrono_0.png'
 		},
 		{
 			'id': 3,
 			'name': 'El Androide Libre',
-			'link': 'elandroidelibre'
+			'link': 'elandroidelibre',
+			'src' : 'https://lh3.googleusercontent.com/yEuI2-aZ69LfsJDD0izJ2q5CKvt-rKpiE_tg6aG6nplkoFauHxKYoaN6v8ubLPztqxyM=h900'
 		}
 		]
 
