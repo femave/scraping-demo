@@ -2,9 +2,10 @@ angular.module('mainApp')
 
 .factory('dataServices', function($http){
 
-	function getInfo(){
-		const url = `/api/laVanguardia`
-		return $http.get(url)
+	function getInfo(newsPage){
+		const data = {newsPage}
+		const url = `/api/${newsPage.id}`
+		return $http.post(url, data)
 	}
 
 

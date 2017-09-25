@@ -7,17 +7,22 @@ angular.module('mainApp')
 		{
 			'id': 0,
 			'name': 'La Vanguardia',
-			'link': 'laVanguardia'
+			'link': 'lavanguardia'
 		},
 		{
 			'id': 1,
 			'name': 'El Pais',
-			'link': 'elPais'
+			'link': 'elpais'
 		},
 		{
 			'id': 2,
 			'name': 'Omicrono',
 			'link': 'omicrono'
+		},
+		{
+			'id': 3,
+			'name': 'El Androide Libre',
+			'link': 'elandroidelibre'
 		}
 		]
 

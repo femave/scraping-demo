@@ -13,22 +13,15 @@ const cheerio = require('cheerio');
 			let href = []
 			let imgSrc = []
 
+			$('article').filter(function(){
 
-			$('.story').filter(function(){
+				const data = $(this)
+			
+				const img = `${data}`.match(/[^"(]+jpg/g)
 
-				const dataTitle = $(this)				
-
-				const imgFirst = `${dataTitle}`.match(/data-src-md=(["'])(.*?)\1/g)
-
-				title.push(dataTitle.find('h1').text())
-				href.push(`${dataTitle}`.match(/[^"]+html/g))
-				if(imgFirst !== null){
-					const imgUrl = imgFirst.join().match(/[^"]+/g)
-					imgSrc.push(imgUrl[1])
-				}else {
-					imgSrc.push(imgFirst)
-				}
-						
+				title.push(data.find('h2').text())
+				href.push(`${data}`.match(/http[^")]+/g))
+				imgSrc.push(img[0])
 
 			})
 
