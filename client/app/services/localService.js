@@ -27,6 +27,12 @@ angular.module('mainApp')
 			'name': 'El Androide Libre',
 			'link': 'elandroidelibre',
 			'src' : 'https://lh3.googleusercontent.com/yEuI2-aZ69LfsJDD0izJ2q5CKvt-rKpiE_tg6aG6nplkoFauHxKYoaN6v8ubLPztqxyM=h900'
+		},
+		{
+			'id': 3,
+			'name': 'Genbeta',
+			'link': 'genbeta',
+			'src' : 'https://i.blogs.es/47b8ab/genbeta-portada/400_300.jpg'
 		}
 		]
 

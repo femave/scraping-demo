@@ -7,7 +7,10 @@ const port = '3001'
 
 // routes
 const laVanguardia = require('./routes/laVanguardia/')
+const elPais = require('./routes/elPais/')
 const omicrono = require('./routes/omicrono/')
+const elAndroideLibre = require('./routes/elAndroideLibre/')
+const genbeta = require('./routes/genbeta/')
 
 // midlewares
 const webToParse = require('./routes/midleware/webToParse')
@@ -20,7 +23,10 @@ app.use(bodyParser.json())
 
 
 app.use('/api/lavanguardia', webToParse, laVanguardia)
+app.use('/api/elpais', webToParse, elPais)
 app.use('/api/omicrono', webToParse, omicrono)
+app.use('/api/elandroidelibre', webToParse, elAndroideLibre)
+app.use('/api/genbeta', webToParse, genbeta)
 
 
 
