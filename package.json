@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install && bower install",
+    "prestart": "npm install && client/bower install",
     "start": "node server/app.js",
     "dev": "nodemon server/app.js",
     "build:scss": "node-sass src/scss/styles.scss client/css/styles.css",
