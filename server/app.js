@@ -3,7 +3,7 @@ const app = express();
 const path = require('path')
 const bodyParser = require('body-parser')
 
-const port = process.env || '3001'
+const port = process.env.PORT || '3001'
 
 // routes
 const laVanguardia = require('./routes/laVanguardia/')
