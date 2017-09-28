@@ -29,10 +29,16 @@ angular.module('mainApp')
 			'src' : 'https://lh3.googleusercontent.com/yEuI2-aZ69LfsJDD0izJ2q5CKvt-rKpiE_tg6aG6nplkoFauHxKYoaN6v8ubLPztqxyM=h900'
 		},
 		{
-			'id': 3,
+			'id': 4,
 			'name': 'Genbeta',
 			'link': 'genbeta',
 			'src' : 'https://i.blogs.es/47b8ab/genbeta-portada/400_300.jpg'
+		},
+		{
+			'id': 5,
+			'name': 'Gizmodo',
+			'link': 'gizmodo',
+			'src' : 'https://i.kinja-img.com/gawker-media/image/upload/s--DzL0Llva--/c_scale,fl_progressive,q_80,w_800/owmkgotelvm5kehatvly.png'
 		}
 		]
 

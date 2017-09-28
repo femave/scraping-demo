@@ -21,6 +21,9 @@ function webScraped(req,res,next){
 		case "genbeta":
 		url = 'https://www.genbeta.com/'
 		break;
+		case "gizmodo":
+		url = 'http://es.gizmodo.com/'
+		break;
 	}
 
 

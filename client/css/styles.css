@@ -1,6 +1,9 @@
 .bg-nav {
-  height: 30px;
-  background-color: #4A4A46; }
+  height: 50px;
+  background-color: #4A4A46;
+  line-height: 50px; }
+  .bg-nav ul {
+    list-style-type: none; }
 
 .bg-home {
   display: flex;

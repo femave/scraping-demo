@@ -11,6 +11,7 @@ const elPais = require('./routes/elPais/')
 const omicrono = require('./routes/omicrono/')
 const elAndroideLibre = require('./routes/elAndroideLibre/')
 const genbeta = require('./routes/genbeta/')
+const gizmodo = require('./routes/gizmodo/')
 
 // midlewares
 const webToParse = require('./routes/midleware/webToParse')
@@ -27,6 +28,7 @@ app.use('/api/elpais', webToParse, elPais)
 app.use('/api/omicrono', webToParse, omicrono)
 app.use('/api/elandroidelibre', webToParse, elAndroideLibre)
 app.use('/api/genbeta', webToParse, genbeta)
+app.use('/api/gizmodo', webToParse, gizmodo)
 
 
 
